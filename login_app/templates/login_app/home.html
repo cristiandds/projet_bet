@@ -1,6 +1,56 @@
 {% extends 'login_app/base.html' %}
 
 {% block content %}
-<h1>Bienvenido al Sistema de Apuestas</h1>
-<p>Por favor inicia sesión o regístrate para continuar.</p>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <div class="card shadow-lg p-4">
+                <div class="card-body">
+                    <h1 class="display-4 mb-4 text-primary">Bienvenido al Sistema de Apuestas</h1>
+                    <p class="lead text-muted mb-4">Por favor inicia sesión o regístrate para continuar.</p>
+                    
+                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                        <a href="{% url 'login' %}" class="btn btn-primary btn-lg px-4 gap-3">
+                            <i class="fas fa-sign-in-alt me-2"></i>Iniciar Sesión
+                        </a>
+                        <a href="{% url 'register' %}" class="btn btn-outline-primary btn-lg px-4">
+                            <i class="fas fa-user-plus me-2"></i>Registrarse
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        border-radius: 15px;
+        border: none;
+        background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    }
+    
+    .btn {
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+    
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    @media (max-width: 768px) {
+        .display-4 {
+            font-size: 2.5rem;
+        }
+        .lead {
+            font-size: 1.1rem;
+        }
+        .btn {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+</style>
 {% endblock %}
